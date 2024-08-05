@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+       <div class="h1"> <h1>Gerenciador de Tarefas</h1></div>
+        <div class="nav">
+            <a href="#" id="show-form">Adicionar Tarefa</a> | 
+            <a href="#" id="show-table">Ver Tarefas</a>
+        </div>
+
+        <!-- Formulário de Tarefa -->
+        <div id="task-form-container">
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Título da Tarefa" required>
+                <input type="text" id="task-description" placeholder="Descrição">
+                <input type="number" id="task-priority" placeholder="Prioridade" min="1" max="5">
+                <input type="date" id="task-due-date">
+                <input type="text" id="task-category" placeholder="Categoria">
+                <textarea id="task-notes" placeholder="Notas"></textarea>
+                <input type="datetime-local" id="task-reminder">
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+        </div>
+
+        <!-- Tabela de Tarefas -->
+        <div id="task-table-container" class="table-container">
+            <select id="view-select">
+                <option value="date">Ordenar por Data</option>
+                <option value="priority">Ordenar por Prioridade</option>
+                <option value="category">Ordenar por Categoria</option>
+            </select>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concluída</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Prioridade</th>
+                        <th>Data de Vencimento</th>
+                        <th>Categoria</th>
+                        <th>Notas</th>
+                        <th>Lembrete</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list">
+                    <!-- As tarefas serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
